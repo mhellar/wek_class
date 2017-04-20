@@ -3,7 +3,7 @@ var express = require('express');
 var osc = require('node-osc');
 
 var app = express();
-var server = app.listen(3000);
+var server = app.listen(3001);
 app.use(express.static('public'));
 
 var io = require('socket.io')(server);
@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
 });
 
 //Connect to server, Our device
-var oscServer = new osc.Server(7999, '192.168.8.185');
+var oscServer = new osc.Server(12000, '127.0.0.1');
 
 //When we recieve a message send it as a web socket
 oscServer.on("message", function(msg, rinfo) {
@@ -27,5 +27,3 @@ oscServer.on("message", function(msg, rinfo) {
     io.sockets.emit('data', msg[1]);
 
 });
-
-
