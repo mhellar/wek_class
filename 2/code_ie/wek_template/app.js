@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 });
 
 //Connect to server, Our device
-var oscServer = new osc.Server(12000, '127.0.0.1');
+var oscServer = new osc.Server(12000, '0.0.0.0');
 
 //When we recieve a message send it as a web socket
 oscServer.on("message", function(msg, rinfo) {
@@ -30,20 +30,5 @@ oscServer.on("message", function(msg, rinfo) {
     io.sockets.emit('data', msg);
 
 
-    // if (ctrl == '/2/push1' && data == 1) {
-    //     console.log("beep");
-    //     io.sockets.emit('data', "beep1");
-    // } else if (ctrl == '/2/push2' && data == 1) {
-    //     console.log("beep2");
-
-    //     io.sockets.emit('data', "beep2");
-    // } else if (ctrl == '/2/push3' && data == 1) {
-    //     console.log("beep3");
-
-    //     io.sockets.emit('data', "beep3");
-    // } else if (ctrl == '/2/push4' && data == 1) {
-    //     console.log("beep4");
-    //     io.sockets.emit('data', "beep4");
-    // }
 
 });
