@@ -19,8 +19,8 @@
 /* Assign a unique ID to this sensor at the same time */
 Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
 
-char ssid[] = "extreme";          // your network SSID (name)
-char pass[] = "extreme!!!";                    // your network password
+char ssid[] = "Wired2";          // your network SSID (name)
+char pass[] = "12!trout";                    // your network password
 
 WiFiUDP Udp;                                // A UDP instance to let us send and receive packets over UDP
 const IPAddress outIp(10, 0, 0, 193);     // remote IP of your computer
