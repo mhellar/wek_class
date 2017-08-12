@@ -27,7 +27,7 @@
     <div class="reveal">
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
-            <section>
+            <!-- <section>
                 <p>Wireless Warmup!</p>
             </section>
             <section>
@@ -64,7 +64,7 @@
             </section>
             <section>
                 <p>keep this circuit, we will return to it.</p>
-            </section>
+            </section> -->
             <section data-background-transition="slide" data-background="img/giphy3.gif">
                 <p>The Wekinator</p><br>
                 <img src="img/wekinator31.jpg">
@@ -134,8 +134,6 @@
                 <p>Open Sound Control (OSC) is a protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology. Bringing the benefits of modern networking technology to the
                     world of electronic musical instruments, OSC's advantages include interoperability, accuracy, flexibility, and enhanced organization and documentation.</p>
             </section>
-
-
             <section>
                 <ul>
                     <ul>Inputs(examples):</ul><br>
@@ -156,8 +154,10 @@
                     <li>Drones</li>
                     <li>Control your house</li>
                     <li>Etc....</li>
-
                 </ul>
+            </section>
+            <section>
+                <p>Case Study:<a href="http://bjoernkarmann.dk/objectifier">Objectifier</a></p><br>
             </section>
             <section>
                 <ul>
@@ -178,7 +178,6 @@
                     <li class="fragment">Integer-valued numeric outputs can take on any integer value (possibly limited to a certain range). For example, you might want to control “MIDI pitch” with an integer-valued output between 0 and 127.
                     </li>
                 </ul>
-
             </section>
             <section>
                 <ul>
@@ -191,6 +190,14 @@
                 <ul>
                     <li>Classification Model</li><br>
                 </ul>
+                <li>Open Simple_Mouse_DraggedObject_2Inputs from the inputs folder</li>
+                <li>Open Processing_FMSynth_3ContinuousOutputs outputs folder</li>
+                <li>Open the Wekinator</li>
+                <li>Set 2 inputs</li>
+                <li>Set 3 outputs</li>
+                <li>Set the output type to All Classifiers</li>
+            </section>
+            <section>
                 <li>Open Simple_Mouse_DraggedObject_2Inputs from the inputs folder</li>
                 <li>Open Processing_FMSynth_3ContinuousOutputs outputs folder</li>
                 <li>Open the Wekinator</li>
@@ -217,16 +224,28 @@
                 <li>Set 1 output</li>
                 <li>Set the output type to All Dynamic Time Warping</li>
             </section>
+
             <section>
-                <li>Using the Huzzah as a Input source</li>
-                <li>getg IP of huzzah by pressing reset an looking in serial monitor</li>
-                <li>Open the Wekinator</li>
-                <li>Set 5 inputs</li>
-                <li>Set 3 outputs</li>
-                <li>Open Processing_FMSynth_3ContinuousOutputs outputs folder</li>
+                We will come back to these models in more depth later, but now lets set up some sensors
             </section>
             <section>
-                <p>You can run it on the Pi!</p><br>
+                <img src="img/teensy.png">
+            </section>
+            <section>
+                <img src="img/adxl_conn.png">
+            </section>
+            <section>
+                <li>Open Arduino, install Adafruit Unified Sensors and Adafruit_ADXL345, Upload adxl345.ino</li><br>
+            </section>
+            <section>
+                <ul>
+                    <li>Building a Classifier</li><br>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>Regression</li><br>
+                </ul>
             </section>
         </div>
     </div>
