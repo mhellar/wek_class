@@ -1,5 +1,15 @@
-var com = require("serialport");
 var app = require('express')();
+
+const SerialPort = require("serialport");
+const Readline = SerialPort.parsers.Readline;
+const port = new SerialPort("/dev/cu.usbmodem143731", {
+    baudRate: 9600
+});
+
+const parser = port.pipe(new Readline({
+    delimiter: "\r\n"
+}));
+
 
 var OscEmitter = require('osc-emitter'),
     emitter = new OscEmitter();
@@ -14,15 +24,11 @@ var serialPort = new com.SerialPort("/dev/cu.usbmodem1411", {
 });
 
 //Serve index.html when some make a request of the server
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-serialPort.on('open', function() {
-    console.log('Port open');
-});
-
-serialPort.on('data', function(data) {
+parser.on("data", function (data) {
     var res = data.split(",");
     emitter.emit('/wek/inputs', parseFloat(res[0]), parseFloat(res[1]), parseFloat(res[2]));
     io.sockets.emit('data', data);
